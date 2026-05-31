@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(az --version)",
+      "Bash(az account show *)"
+    ]
+  }
+}

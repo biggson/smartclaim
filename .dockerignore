@@ -1,0 +1,15 @@
+.venv/
+venv/
+__pycache__/
+*.pyc
+*.pyo
+.env
+outputs/*.png
+outputs/*.jpg
+outputs/*.csv
+labs/
+.git/
+.gitignore
+CLAUDE.md
+README.md
+startup.sh

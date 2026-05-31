@@ -1,0 +1,20 @@
+services:
+  smartclaim-api:
+    build: .
+    container_name: smartclaim-api
+    ports:
+      - "8000:8000"
+    env_file:
+      - .env
+    environment:
+      # Azure service principal auth (used by DefaultAzureCredential inside container)
+      # Set these in your .env file:
+      #   AZURE_TENANT_ID=<your-tenant-id>
+      #   AZURE_CLIENT_ID=<your-client-id>
+      #   AZURE_CLIENT_SECRET=<your-client-secret>
+      AZURE_TENANT_ID: ${AZURE_TENANT_ID:-}
+      AZURE_CLIENT_ID: ${AZURE_CLIENT_ID:-}
+      AZURE_CLIENT_SECRET: ${AZURE_CLIENT_SECRET:-}
+    volumes:
+      - ./outputs:/app/outputs
+    restart: unless-stopped
